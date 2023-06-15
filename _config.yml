@@ -18,13 +18,13 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Ein Dashboard erstellen mit Node-RED
-description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+title: Node-RED
+# description: >-
+#   Write an awesome description for your new site here. You can edit this
+#   line in _config.yml. It will appear in your document head meta (for
+#   Google search results) and in your feed.xml site description.
 host: "192.168.104.26"
-baseurl: "NodeRED"
+baseurl: "/NodeRED"
 url: "https://smartonosen.github.io"
 site_author: Fabio, Simeon, Adrian
 repo_url: "https://github.com/SmartonoseN/NodeRED"
@@ -36,9 +36,8 @@ sticky_navigation: true
 
 # Build settings
 remote_theme: carlosperate/jekyll-theme-rtd
-#plugins:
-#  - jekyll-feed
-#  - jekyll-remote-theme
+plugins:
+  - jekyll-remote-theme
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to
