@@ -26,8 +26,8 @@ description: >- # this means to ignore newlines until "baseurl:"
 host: "192.168.104.26"
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
-site_author: Fabio, Simeon & Adrian
-repo_url: 'TODO'
+site_author: Fabio, Simeon, Adrian
+repo_url: "https://github.com/SmartonoseN/NodeRED"
 edit_on_github: false
 github_docs_folder: false
 #logo: 'https://your.url/image.png'
@@ -38,9 +38,8 @@ sticky_navigation: true
 remote_theme: carlosperate/jekyll-theme-rtd
 
 plugins:
-#  - jekyll-feed
+  #  - jekyll-feed
   - jekyll-remote-theme
-
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to
