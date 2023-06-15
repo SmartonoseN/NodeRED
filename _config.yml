@@ -24,8 +24,8 @@ description: >- # this means to ignore newlines until "baseurl:"
   line in _config.yml. It will appear in your document head meta (for
   Google search results) and in your feed.xml site description.
 host: "192.168.104.26"
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "NodeRED"
+url: "https://smartonosen.github.io"
 site_author: Fabio, Simeon, Adrian
 repo_url: "https://github.com/SmartonoseN/NodeRED"
 edit_on_github: false
