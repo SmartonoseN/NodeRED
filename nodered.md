@@ -23,13 +23,22 @@ Um Node-RED auf Ihrem Raspberry Pi zu installieren, müssen Sie folgende Schritt
    - Die neueste Version von Node-RED mit npm installieren.
    - optional eine Sammlung von nützlichen Pi-spezifischen Nodes installieren.
    - Node-RED so einrichten, dass es als Dienst läuft und eine Reihe von Befehlen für die Arbeit mit dem Dienst bereitstellen.
-<br><br>
-7. Node-RED starten:
+   <br><br>
+2. Node-RED starten:
    Geben Sie den Befehl `node-red` in das Terminal ein und drücken Sie die Eingabetaste. Node-RED sollte gestartet werden und Sie sollten eine Ausgabe sehen, die angibt, dass der Server auf Port 1880 läuft.
 
    Um Node-Red im Hintergrund laufen zu lassen können die Befehle `node-red-start`, `node-red-stop`, `node-red-restart` und `node-red-log` verwendet werden
-<br><br>
-8. Zugriff auf die Node-RED Oberfläche:
+   <br><br>
+3. Um Node-RED automatisch beim Hochfahren des Pis zu starten kann dieser Befehl genutzt werden:
+   ```
+   sudo systemctl enable nodered.service
+   ```
+   Um dies wieder auzuschalten kann dieser Befehl genutzt werden:
+   ```
+   sudo systemctl enable nodered.service
+   ```
+   <br>
+4. Zugriff auf die Node-RED Oberfläche:
    Öffnen Sie einen Webbrowser auf einem anderen Gerät, das mit demselben Netzwerk wie der Raspberry Pi verbunden ist, und geben Sie die IP-Adresse des Raspberry Pi gefolgt von :1880 in die Adressleiste ein. Dadurch wird die Node-RED Oberfläche geöffnet, in dem Sie Ihre Flows erstellen und bearbeiten können.
 
 Nun haben Sie Node-RED erfolgreich auf Ihrem Raspberry Pi installiert und gestartet. Jetzt können Sie mit der Erstellung Ihrer Flows und dem Experimentieren mit den verschiedenen Node-RED-Komponenten beginnen.

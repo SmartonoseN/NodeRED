@@ -10,7 +10,7 @@ nav_order: 1
 
 Der einfachste Weg um ein OS auf dem Raspberry zu installieren ist mit dem [Raspberry Pi Imager](https://www.raspberrypi.com/software/). Nach dem Download und der Installation muss nur die SD Karte ausgewählt werden und das benötigte OS. NodeRED funktioniert auf vielen Betriebsystemen, wir benutzen hier als Beispiel Ubuntu Server in der neusten Version.
 
-Da es sich dabei um ein OS ohne grafische Oberfläche handelt muss man in den Einstellungen des Imager noch SSH aktivieren, ein Nutzernamen und Passwort angeben und (falls kein LAN vorhanden) ein WLAN ZUgang einrichten.
+Da es sich dabei um ein OS ohne grafische Oberfläche handelt muss man in den Einstellungen des Imager noch SSH aktivieren, ein Nutzernamen und Passwort angeben und (falls kein LAN vorhanden) ein WLAN Zugang einrichten.
 
 ## Anmeldung im Raspberry Pi
 
