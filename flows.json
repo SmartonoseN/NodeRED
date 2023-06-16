@@ -1,0 +1,453 @@
+[
+    {
+        "id": "ec8b5e2995b985b0",
+        "type": "tab",
+        "label": "Wetter API",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "910934d37b920f43",
+        "type": "tab",
+        "label": "DHT11",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "7d7c05e59bf343cc",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD.MM.YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "adfafd30e37fc31e",
+        "type": "ui_group",
+        "name": "Wetter API",
+        "tab": "a4ad173345347c8d",
+        "order": 1,
+        "disp": true,
+        "width": "12",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "a4ad173345347c8d",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "af4e9b04d0362ae5",
+        "type": "ui_group",
+        "name": "Sensor",
+        "tab": "a4ad173345347c8d",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "242ce60aa52f9b71",
+        "type": "http request",
+        "z": "ec8b5e2995b985b0",
+        "name": "",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "query",
+        "url": "https://api.open-meteo.com/v1/forecast",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 530,
+        "y": 60,
+        "wires": [
+            [
+                "1bb42822344d63db"
+            ]
+        ]
+    },
+    {
+        "id": "009ad14bd1763a44",
+        "type": "ui_button",
+        "z": "ec8b5e2995b985b0",
+        "name": "",
+        "group": "adfafd30e37fc31e",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Refresh",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 100,
+        "y": 60,
+        "wires": [
+            [
+                "4beab1e5a056758a"
+            ]
+        ]
+    },
+    {
+        "id": "1dd795b7a4ee8767",
+        "type": "ui_chart",
+        "z": "ec8b5e2995b985b0",
+        "name": "",
+        "group": "adfafd30e37fc31e",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "Temperatur",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "auto",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "1",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "604800",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 330,
+        "y": 160,
+        "wires": [
+            [
+                "077e277220b164ed"
+            ]
+        ]
+    },
+    {
+        "id": "65107105e6b46538",
+        "type": "ui_toast",
+        "z": "ec8b5e2995b985b0",
+        "position": "top right",
+        "displayTime": "3",
+        "highlight": "",
+        "sendall": true,
+        "outputs": 0,
+        "ok": "OK",
+        "cancel": "",
+        "raw": false,
+        "className": "",
+        "topic": "Wetterdaten aktualisiert",
+        "name": "",
+        "x": 430,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "077e277220b164ed",
+        "type": "change",
+        "z": "ec8b5e2995b985b0",
+        "name": "",
+        "rules": [
+            {
+                "t": "delete",
+                "p": "payload",
+                "pt": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 180,
+        "y": 260,
+        "wires": [
+            [
+                "65107105e6b46538"
+            ]
+        ]
+    },
+    {
+        "id": "1bb42822344d63db",
+        "type": "function",
+        "z": "ec8b5e2995b985b0",
+        "name": "function 1",
+        "func": "let data = msg.payload.hourly\nlet temperature = []\nlet apparentTemperature = []\n\nfor (let i = 0; i < data.time.length; i++) {\n    let time = data.time[i] * 1000\n    temperature.push({\n        x: time,\n        y: data.temperature_2m[i]\n    })\n    apparentTemperature.push({\n        x: time,\n        y: data.apparent_temperature[i]\n    })\n}\n\nmsg.payload = [{\n    \"series\": [\"°C\", \"°C gefühlt\"],\n    \"data\": [temperature, apparentTemperature],\n    \"labels\": [\"\"]\n}]\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 140,
+        "y": 160,
+        "wires": [
+            [
+                "1dd795b7a4ee8767"
+            ]
+        ]
+    },
+    {
+        "id": "4beab1e5a056758a",
+        "type": "change",
+        "z": "ec8b5e2995b985b0",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"latitude\":49.79,\"longitude\":9.95,\"hourly\":\"temperature_2m,apparent_temperature\",\"timeformat\":\"unixtime\",\"forecast_days\":14,\"timezone\":\"auto\"}",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 310,
+        "y": 60,
+        "wires": [
+            [
+                "242ce60aa52f9b71"
+            ]
+        ]
+    },
+    {
+        "id": "9f279338063ec7d1",
+        "type": "rpi-dht22",
+        "z": "910934d37b920f43",
+        "name": "",
+        "topic": "rpi-dht11",
+        "dht": "11",
+        "pintype": "0",
+        "pin": 4,
+        "x": 280,
+        "y": 60,
+        "wires": [
+            [
+                "250e0316e0a47548",
+                "2c01e12cfaeef63a"
+            ]
+        ]
+    },
+    {
+        "id": "75a420418bf616b7",
+        "type": "inject",
+        "z": "910934d37b920f43",
+        "name": "",
+        "props": [],
+        "repeat": "1",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 110,
+        "y": 60,
+        "wires": [
+            [
+                "9f279338063ec7d1"
+            ]
+        ]
+    },
+    {
+        "id": "250e0316e0a47548",
+        "type": "ui_gauge",
+        "z": "910934d37b920f43",
+        "name": "",
+        "group": "af4e9b04d0362ae5",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Temperatur",
+        "label": "°C",
+        "format": "{{value}}",
+        "min": "-20",
+        "max": "40",
+        "colors": [
+            "#00ffff",
+            "#ff8000",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 710,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "2c01e12cfaeef63a",
+        "type": "change",
+        "z": "910934d37b920f43",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "humidity",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 490,
+        "y": 160,
+        "wires": [
+            [
+                "31f99279fe134f6f"
+            ]
+        ]
+    },
+    {
+        "id": "31f99279fe134f6f",
+        "type": "ui_gauge",
+        "z": "910934d37b920f43",
+        "name": "",
+        "group": "af4e9b04d0362ae5",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Luftfeuchtigkeit",
+        "label": "%",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#0000ff",
+            "#0000ff",
+            "#0000ff"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 720,
+        "y": 160,
+        "wires": []
+    }
+]
