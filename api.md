@@ -25,11 +25,9 @@ Diese Daten werden an den "http request"-Node weitergegeben. Hier muss nicht meh
 
 Um die Daten anzuzeigen wird ein Chart mit einem Refresh-Button in der UI verwendet. In diesen Nodes muss nur wenig konfiguriert werden, nur ein paar Einstellungen wie diese genau angezeigt werden sollen (Farbe, Text, usw) und es muss eine Gruppe zur Anzeige ausgewählt werden.
 
-Finale Anzeige:
+Um die Daten allerdings in den Chart zu bekommen müssen sie in ein bestimmtes JSON-Format gebracht werden. Dies geschied über eine function-Node, die eine JavaScript Funktion ausführt.
 
-![](/img/apiUi.png)
-
-Um die Daten allerdings in den Chart zu bekommen müssen sie in ein bestimmtes JSON-Format gebracht werden. Dies geschied über eine function-Node, die eine JavaScript Funktion ausführt
+Am Ende des Flows wird noch `msg.payload` gelöscht und eine Notification angezeigt um dem Nutzer zu signalisieren das die Daten erfolgreich aktualisiert wurden. Dies geht einfach mit einer notification-Node.
 
 ### JavaScript Funktion
 ```js
@@ -105,7 +103,8 @@ return msg;
 ]
 ```
 
-### Kompletter Flow
-![](/img/apiFlow.png)
+### Finale Anzeige:
+![](/img/apiUi.png)
 
-Am Ende des Flows wird noch `msg.payload` gelöscht und eine Notification angezeigt um dem Nutzer zu signalisieren das die Daten erfolgreich aktualisiert wurden.
+## Kompletter Flow
+![](/img/apiFlow.png)
