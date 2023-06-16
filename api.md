@@ -107,4 +107,6 @@ return msg;
 ![](/img/apiUi.png)
 
 ## Kompletter Flow
+Wenn der Refresh-Button gedrückt wird (1. Node), werden die benötigten Parameter in `msg.payload` gesetzt (2. Node). Mit diesen Parametern wird eine HTTP-Request gesendet (3. Node) und deren Antwort mit einer JavaScript-Funktion in die benötigte Form umgewandelt (4. Node) um damit ein Diagramm zu erstellt (5. Node). Zum Schluss wird `msg.payload` gelöscht (6. Node) und eine Notification angezeigt (7. Node).
+
 ![](/img/apiFlow.png)
