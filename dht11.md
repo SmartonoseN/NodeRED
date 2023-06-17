@@ -25,9 +25,9 @@ Führen Sie die folgenden Schritte aus, um den DHT11-Sensor mit dem Raspberry Pi
 
 ## Konfiguration in Node-RED
 
-Um den DHT11 in NodeRED nutzen zu können müssen Sie das Plugin "node-red-contrib-dht-sensor" verwenden. Um dieses zu installieren öffnen Sie Ihren Webbrowser und navigieren Sie zu http://IP-des-Raspberry:1880. Sie sollten die Node-RED-Benutzeroberfläche sehen. Klicken Sie auf das Menü-Symbol in der oberen rechten Ecke und wählen Sie "Manage Palette" aus dem Dropdown-Menü.Navigieren Sie zum Tab "Install" und suchen Sie nach dem Plugin. Klicken Sie auf die Schaltfläche "Install" neben dem Dashboard-Plugin, um es in Node-RED zu aktivieren.
+Um den DHT11 in NodeRED nutzen zu können, müssen Sie das Plugin "node-red-contrib-dht-sensor" verwenden. Um dieses zu installieren, öffnen Sie Ihren Webbrowser und navigieren Sie zu http://IP-des-Raspberry:1880. Sie sollten die Node-RED-Benutzeroberfläche sehen. Klicken Sie auf das Menü-Symbol in der oberen rechten Ecke und wählen Sie "Manage Palette" aus dem Dropdown-Menü.Navigieren Sie zum Tab "Install" und suchen Sie nach dem Plugin. Klicken Sie auf die Schaltfläche "Install" neben dem Dashboard-Plugin, um es in Node-RED zu aktivieren.
 
-Um nun die Daten vom DHT11 zu bekommen wir eine inject-Node und eine rpi-dht22-Node benötigt. In der inject-Node wird eingestellt wie oft die Daten des Sensors gelesen werden sollen (z.B. einmal pro Sekunde). Die andere Node wird wie folgt eingestellt um auf den Sensor zuzugreifen:
+Um nun die Daten vom DHT11 zu bekommen, wird eine inject-Node und eine rpi-dht22-Node benötigt. In der inject-Node wird eingestellt, wie oft die Daten des Sensors gelesen werden sollen (z.B. einmal pro Sekunde). Die andere Node wird wie folgt eingestellt, um auf den Sensor zuzugreifen:
 
 ![](img/dht11Node.png)
 
@@ -35,11 +35,11 @@ Danach wird automatisch die aktuelle Temperatur in `msg.payload` und die Luftfeu
 
 ## Anzeige im Dashboard
 
-Um die Daten im Dashboard anzuzeigen werden am besten zwei Gauge-Nodes verwendet. Diese zeigen den Wert aus `msg.payload` an, deswegen muss für die Temperaturanzeige hier nichts mehr an den Daten geändert werden und für die Luftfeuchtigkeit lediglich `msg.payload` auf `msg.humidity` gesetzt werden, dies geht einfach mit einer change-Node.
+Um die Daten im Dashboard anzuzeigen, werden zwei Gauge-Nodes verwendet. Diese zeigen den Wert aus `msg.payload` an. Deswegen muss für die Temperaturanzeige hier nichts mehr an den Daten geändert werden und für die Luftfeuchtigkeit lediglich `msg.payload` auf `msg.humidity` gesetzt werden. Dies geht einfach mit einer change-Node.
 
 ![](img/dht11ChangeNode.png)
 
-In den Gauge-Nodes selbst muss nur eine beliebige Gruppe festgelegt werden und es kann nach belieben die genaue Darstellung angepasst werden. Zu empfehlen ist hier `Label`, `Units` und `Range` passend einzustellen.
+In den Gauge-Nodes selbst muss nur eine beliebige Gruppe festgelegt werden und es kann nach Belieben die genaue Darstellung angepasst werden. Zu empfehlen ist hier `Label`, `Units` und `Range` passend einzustellen.
 
 Der komplette Flow und die Anzeige im Dashboard sehen dann wie folgt aus:
 

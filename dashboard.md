@@ -7,7 +7,7 @@ nav_order: 3
 
 # ![](https://github.com/node-red/node-red-dashboard/blob/master/src/icon64x64.png?raw=true) Dashboard
 
-Das Node-RED Dashboard ist ein Plugin für die Flow-basierte Entwicklungsplattform Node-RED, mit dem Sie benutzerdefinierte Benutzeroberflächen erstellen können. Um das Node-RED Dashboard zu installieren, müssen die folgenden Schritten befolgt werden:
+Das Node-RED Dashboard ist ein Plugin für die Flow-basierte Entwicklungsplattform Node-RED, mit dem Sie benutzerdefinierte Benutzeroberflächen erstellen können. Um das Node-RED Dashboard zu installieren, müssen die folgenden Schritten befolgt werden.
 
 ## Installation
 

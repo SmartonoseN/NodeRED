@@ -6,28 +6,28 @@ nav_order: 5
 
 # ![](https://open-meteo.com/favicon.ico) Wetterdaten von open-meteo.com
 
-Um neben den Daten des Sensors noch einen Ausblick zu geben wie sich die Temperatur in den nächsten Tagen entwickelt wird, werden noch Daten einer öffentlichen Wetter-API in Node-RED geladen.
+Um neben den Daten des Sensors noch einen Ausblick zu geben, wie sich die Temperatur in den nächsten Tagen entwickeln wird, werden noch Daten einer öffentlichen Wetter-API in Node-RED geladen.
 Wir haben uns dabei für open-meteo.com entschieden, da diese einfach zu nutzen ist und keine Anmeldung erfordert.
 
 ## Aufrufen der API in Node-RED
 
-Um die API aufzurufen werden in Node-RED 2 Blöcke genutzt. Einen Change-Node um die benötigten Parameter in msg.payload zu schreiben und ein "http request"-Node um die eigendliche Anfrage abzuschicken.
+Um die API aufzurufen, werden in Node-RED zwei Blöcke genutzt. Einen Change-Node, um die benötigten Parameter in msg.payload zu schreiben und ein "http request"-Node, um die eigentliche Anfrage abzuschicken.
 
-Konkret werden im Change-Node die Koordinaten des Ortes gesetzt von dem die Daten gesucht werden sollen, welche Daten gebraucht werden (in unserem Fall die stündliche Temperatur und gefühlte Temperatur) und die Zeit (bei uns die nächsten 14 Tage). Zusätzlich wird das Zeitformat noch auf `unixtime` und ide Zeitzone auf `auto` gesetzt um die Zeiten später einfacher anzeigen zu können.
+Konkret werden im Change-Node die Koordinaten des Ortes gesetzt, von dem die Daten gesucht werden sollen, welche Daten gebraucht werden (in unserem Fall die stündliche Temperatur und gefühlte Temperatur) und die Zeit (bei uns die nächsten 14 Tage). Zusätzlich wird das Zeitformat noch auf `unixtime` und ide Zeitzone auf `auto` gesetzt, um die Zeiten später einfacher anzeigen zu können.
 
 ![](/img/apiChangeNode.png)
 
-Diese Daten werden an den "http request"-Node weitergegeben. Hier muss nicht mehr viel konfiguriert werden, es muss nur die entsprechende URL von open-meteo.com eingegeben werden und darauf geauchtet werden, dass die Methode auf GET steht und als Rückgabe JSON ausgewählt ist.
+Diese Daten werden an den "http request"-Node weitergegeben. Hier muss nicht mehr viel konfiguriert werden. Es muss nur die entsprechende URL von open-meteo.com eingegeben werden und darauf geauchtet werden, dass die Methode auf GET steht und als Rückgabe JSON ausgewählt ist.
 
 ![](/img/apiHttpRequestNode.png)
 
 ## Anzeige im Dashboard
 
-Um die Daten anzuzeigen wird ein Chart mit einem Refresh-Button in der UI verwendet. In diesen Nodes muss nur wenig konfiguriert werden, nur ein paar Einstellungen wie diese genau angezeigt werden sollen (Farbe, Text, usw) und es muss eine Gruppe zur Anzeige ausgewählt werden.
+Um die Daten anzuzeigen, wird ein Chart mit einem Refresh-Button in der UI verwendet. In diesen Nodes muss nur wenig konfiguriert werden, nur ein paar Einstellungen, wie diese genau angezeigt werden sollen (Farbe, Text, usw) und es muss eine Gruppe zur Anzeige ausgewählt werden.
 
-Um die Daten allerdings in den Chart zu bekommen müssen sie in ein bestimmtes JSON-Format gebracht werden. Dies geschied über eine function-Node, die eine JavaScript Funktion ausführt.
+Um die Daten allerdings in den Chart zu bekommen, müssen sie in ein bestimmtes JSON-Format gebracht werden. Dies geschieht über eine function-Node, die eine JavaScript-Funktion ausführt.
 
-Am Ende des Flows wird noch `msg.payload` gelöscht und eine Notification angezeigt um dem Nutzer zu signalisieren das die Daten erfolgreich aktualisiert wurden. Dies geht einfach mit einer notification-Node.
+Am Ende des Flows wird noch `msg.payload` gelöscht und eine Notification angezeigt, um dem Nutzer zu signalisieren, dass die Daten erfolgreich aktualisiert wurden. Dies geht mit einer Notification-Node.
 
 ### JavaScript Funktion
 ```js
@@ -107,6 +107,6 @@ return msg;
 ![](/img/apiUi.png)
 
 ## Kompletter Flow
-Wenn der Refresh-Button gedrückt wird (1. Node), werden die benötigten Parameter in `msg.payload` gesetzt (2. Node). Mit diesen Parametern wird eine HTTP-Request gesendet (3. Node) und deren Antwort mit einer JavaScript-Funktion in die benötigte Form umgewandelt (4. Node) um damit ein Diagramm zu erstellt (5. Node). Zum Schluss wird `msg.payload` gelöscht (6. Node) und eine Notification angezeigt (7. Node).
+Wenn der Refresh-Button gedrückt wird (1. Node), werden die benötigten Parameter in `msg.payload` gesetzt (2. Node). Mit diesen Parametern wird eine HTTP-Request gesendet (3. Node) und deren Antwort mit einer JavaScript-Funktion in die benötigte Form umgewandelt (4. Node), um damit ein Diagramm zu erstellen (5. Node). Zum Schluss wird `msg.payload` gelöscht (6. Node) und eine Notification angezeigt (7. Node).
 
 ![](/img/apiFlow.png)

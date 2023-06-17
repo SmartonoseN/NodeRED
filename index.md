@@ -29,6 +29,6 @@ Der Aufbau von Node-RED besteht aus verschiedenen Hauptkomponenten:
 <br><br>
 5. Flows: Flows sind die visuelle Darstellung der Logik und des Datenflusses in Node-RED. Ein Flow besteht aus einer Reihe von miteinander verbundenen Knoten, die eine bestimmte Aufgabe erfüllen. Flows können komplexe Automatisierungen und Workflows abbilden. Sie können mehrere Flows erstellen und zwischen ihnen wechseln, um verschiedene Aufgaben zu organisieren.
 <br><br>
-6. Debugging: Node-RED bietet integrierte Debugging-Funktionen, mit denen du den Datenfluss und die Ausgabe der Knoten überwachen kannst. Du kannst Debug-Nachrichten zu bestimmten Stellen in deinem Flow hinzufügen, um den Inhalt von Datenobjekten anzuzeigen und Fehler zu finden.
+6. Debugging: Node-RED bietet integrierte Debugging-Funktionen, mit denen Sie den Datenfluss und die Ausgabe der Knoten überwachen können. Sie können Debug-Nachrichten zu bestimmten Stellen in Ihrem Flow hinzufügen, um den Inhalt von Datenobjekten anzuzeigen und Fehler zu finden.
 <br><br>
-7. Deploy: Sobald du mit der Erstellung deines Flows zufrieden bist, kannst du den Flow in Node-RED bereitstellen (deployen). Dies bedeutet, dass deine Logik und deine Verbindungen aktiviert und ausgeführt werden. Du kannst deinen Flow in Echtzeit testen und bei Bedarf Änderungen vornehmen.
+7. Deploy: Sobald Sie mit der Erstellung Ihres Flows zufrieden sind, können Sie den Flow in Node-RED bereitstellen (deployen). Dies bedeutet, dass Ihre Logik und Verbindungen aktiviert und ausgeführt werden. Sie können Ihren Flow in Echtzeit testen und bei Bedarf Änderungen vornehmen.
